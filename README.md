@@ -1,11 +1,11 @@
 # Validate
 
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/gookit/validate)](https://github.com/gookit/validate)
-[![GoDoc](https://godoc.org/github.com/gookit/validate?status.svg)](https://pkg.go.dev/github.com/gookit/validate)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/westernmonster/validate)](https://github.com/westernmonster/validate)
+[![GoDoc](https://godoc.org/github.com/westernmonster/validate?status.svg)](https://pkg.go.dev/github.com/westernmonster/validate)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/gookit/goutil?style=flat-square)
-[![Coverage Status](https://coveralls.io/repos/github/gookit/validate/badge.svg?branch=master)](https://coveralls.io/github/gookit/validate?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/gookit/validate)](https://goreportcard.com/report/github.com/gookit/validate)
-[![Actions Status](https://github.com/gookit/validate/workflows/Unit-Tests/badge.svg)](https://github.com/gookit/validate/actions)
+[![Coverage Status](https://coveralls.io/repos/github/westernmonster/validate/badge.svg?branch=master)](https://coveralls.io/github/westernmonster/validate?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/westernmonster/validate)](https://goreportcard.com/report/github.com/westernmonster/validate)
+[![Actions Status](https://github.com/westernmonster/validate/workflows/Unit-Tests/badge.svg)](https://github.com/westernmonster/validate/actions)
 
 `validate` is a generic Go data validate and filter tool library.
 
@@ -29,8 +29,8 @@
 
 ## Go Doc
 
-- [godoc for gopkg](https://pkg.go.dev/gopkg.in/gookit/validate.v1)
-- [godoc for github](https://pkg.go.dev/github.com/gookit/validate)
+- [godoc for gopkg](https://pkg.go.dev/gopkg.in/westernmonster/validate.v1)
+- [godoc for github](https://pkg.go.dev/github.com/westernmonster/validate)
 
 ## Validate Struct
 
@@ -51,7 +51,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/gookit/validate"
+	"github.com/westernmonster/validate"
 )
 
 // UserForm struct
@@ -93,7 +93,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/gookit/validate"
+	"github.com/westernmonster/validate"
 )
 
 // UserForm struct
@@ -158,7 +158,7 @@ package main
 import (
   "fmt"
 
-  "github.com/gookit/validate"
+  "github.com/westernmonster/validate"
 )
 
 func main() {
@@ -190,7 +190,7 @@ package main
 import (
 "fmt"
 
-"github.com/gookit/validate"
+"github.com/westernmonster/validate"
 )
 
 func main()  {
@@ -246,7 +246,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/gookit/validate"
+	"github.com/westernmonster/validate"
 )
 
 // UserForm struct
@@ -470,7 +470,7 @@ validate.Config(func(opt *validate.GlobalOption) {
 - Register language messages
 
 ```go
-import "github.com/gookit/validate/locales/zhcn"
+import "github.com/westernmonster/validate/locales/zhcn"
 
 // for all Validation.
 // NOTICE: must be registered before on validate.New(), it only need call at once.
@@ -589,7 +589,7 @@ You can add one or more custom validators at once.
 ```go
 package main
 
-import "github.com/gookit/validate"
+import "github.com/westernmonster/validate"
 
 func init() {
 	validate.AddFilter("myToIntFilter0", func(val any) int {
@@ -612,7 +612,7 @@ Again, you can add one or more custom filters at once.
 ```go
 package main
 
-import "github.com/gookit/validate"
+import "github.com/westernmonster/validate"
 
 func main() {
 	v := validate.New(&someStrcut{})
@@ -667,7 +667,7 @@ Can use `validate` in any frameworks, such as Gin, Echo, Chi and more.
 package main
 import (
     "github.com/gin-gonic/gin/binding"
-    "github.com/gookit/validate"
+    "github.com/westernmonster/validate"
 )
 
 // implements the binding.StructValidator
@@ -838,7 +838,7 @@ filter/aliases | description
 - [gookit/config](https://github.com/gookit/config) Go config management. support JSON, YAML, TOML, INI, HCL, ENV and Flags
 - [gookit/color](https://github.com/gookit/color) A command-line color library with true color support, universal API methods and Windows support
 - [gookit/filter](https://github.com/gookit/filter) Provide filtering, sanitizing, and conversion of golang data
-- [gookit/validate](https://github.com/gookit/validate) Use for data validation and filtering. support Map, Struct, Form data
+- [westernmonster/validate](https://github.com/westernmonster/validate) Use for data validation and filtering. support Map, Struct, Form data
 - [gookit/goutil](https://github.com/gookit/goutil) Some utils for the Go: string, array/slice, map, format, cli, env, filesystem, test and more
 - More please see https://github.com/gookit
 

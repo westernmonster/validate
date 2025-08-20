@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/gookit/goutil"
-	"github.com/gookit/validate"
+	"github.com/westernmonster/validate"
 )
 
 // UserForm struct

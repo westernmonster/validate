@@ -5,7 +5,6 @@ go 1.18
 require (
 	github.com/gookit/filter v1.2.2
 	github.com/gookit/goutil v0.6.18
-	github.com/gookit/validate v1.5.5
 )
 
 require (

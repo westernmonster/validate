@@ -1,11 +1,11 @@
 # Validate
 
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/gookit/validate)](https://github.com/gookit/validate)
-[![GoDoc](https://godoc.org/github.com/gookit/validate?status.svg)](https://pkg.go.dev/github.com/gookit/validate)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/westernmonster/validate)](https://github.com/westernmonster/validate)
+[![GoDoc](https://godoc.org/github.com/westernmonster/validate?status.svg)](https://pkg.go.dev/github.com/westernmonster/validate)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/gookit/goutil?style=flat-square)
-[![Coverage Status](https://coveralls.io/repos/github/gookit/validate/badge.svg?branch=master)](https://coveralls.io/github/gookit/validate?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/gookit/validate)](https://goreportcard.com/report/github.com/gookit/validate)
-[![Actions Status](https://github.com/gookit/validate/workflows/Unit-Tests/badge.svg)](https://github.com/gookit/validate/actions)
+[![Coverage Status](https://coveralls.io/repos/github/westernmonster/validate/badge.svg?branch=master)](https://coveralls.io/github/westernmonster/validate?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/westernmonster/validate)](https://goreportcard.com/report/github.com/westernmonster/validate)
+[![Actions Status](https://github.com/westernmonster/validate/workflows/Unit-Tests/badge.svg)](https://github.com/westernmonster/validate/actions)
 
 Go通用的数据验证与过滤库，使用简单，内置大部分常用验证器、过滤器，支持自定义消息、字段翻译。
 
@@ -32,8 +32,8 @@ Please see the English introduction **[README](README.md)**
 
 ## Go Doc
 
-- [godoc for gopkg](https://pkg.go.dev/gopkg.in/gookit/validate.v1)
-- [godoc for github](https://pkg.go.dev/github.com/gookit/validate)
+- [godoc for gopkg](https://pkg.go.dev/gopkg.in/westernmonster/validate.v1)
+- [godoc for github](https://pkg.go.dev/github.com/westernmonster/validate)
 
 ## 验证结构体(Struct)
 
@@ -56,7 +56,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/gookit/validate"
+	"github.com/westernmonster/validate"
 )
 
 // UserForm struct
@@ -98,7 +98,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/gookit/validate"
+	"github.com/westernmonster/validate"
 )
 
 // UserForm struct
@@ -181,7 +181,7 @@ func main() {
 package main
 
 import "fmt"
-import "github.com/gookit/validate"
+import "github.com/westernmonster/validate"
 
 func main()  {
 	m := map[string]any{
@@ -237,7 +237,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gookit/validate"
+	"github.com/westernmonster/validate"
 )
 
 func main()  {
@@ -408,7 +408,7 @@ type GlobalOption struct {
 - 注册内置的语言消息
 
 ```go
-import "github.com/gookit/validate/locales/zhcn"
+import "github.com/westernmonster/validate/locales/zhcn"
 
 // for all Validation.
 // NOTICE: 必须在调用 validate.New() 前注册, 它只需要一次调用。
@@ -526,7 +526,7 @@ func (f UserForm) Messages() map[string]string {
 ```go
 package main
 
-import "github.com/gookit/validate"
+import "github.com/westernmonster/validate"
 
 func init() {
 	validate.AddFilter("myToIntFilter0", func(val any) int {
@@ -549,7 +549,7 @@ func init() {
 ```go
 package main
 
-import "github.com/gookit/validate"
+import "github.com/westernmonster/validate"
 
 func main() {
 	v := validate.New(&someStrcut{})
@@ -599,7 +599,7 @@ func main() {
 package main
 import (
     "github.com/gin-gonic/gin/binding"
-    "github.com/gookit/validate"
+    "github.com/westernmonster/validate"
 )
 
 // implements the binding.StructValidator
@@ -769,7 +769,7 @@ func main()  {
 
 ## 欢迎Star
 
-- **[github](https://github.com/gookit/validate)**
+- **[github](https://github.com/westernmonster/validate)**
 - [gitee](https://gitee.com/inhere/validate)
 
 ## Gookit 工具包
@@ -782,7 +782,7 @@ func main()  {
 - [gookit/config](https://github.com/gookit/config) Go应用配置管理，支持多种格式（JSON, YAML, TOML, INI, HCL, ENV, Flags），多文件加载，远程文件加载，数据合并
 - [gookit/color](https://github.com/gookit/color) CLI 控制台颜色渲染工具库, 拥有简洁的使用API，支持16色，256色，RGB色彩渲染输出
 - [gookit/filter](https://github.com/gookit/filter) 提供对Golang数据的过滤，净化，转换
-- [gookit/validate](https://github.com/gookit/validate) Go通用的数据验证与过滤库，使用简单，内置大部分常用验证、过滤器
+- [westernmonster/validate](https://github.com/westernmonster/validate) Go通用的数据验证与过滤库，使用简单，内置大部分常用验证、过滤器
 - [gookit/goutil](https://github.com/gookit/goutil) Go 的一些工具函数，格式化，特殊处理，常用信息获取等
 - 更多请查看 https://github.com/gookit
 

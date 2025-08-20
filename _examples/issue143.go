@@ -3,7 +3,8 @@ package main
 import (
 	"github.com/gookit/goutil/cliutil"
 	"github.com/gookit/goutil/dump"
-	"github.com/gookit/validate"
+
+	"github.com/westernmonster/validate"
 )
 
 type Data struct {

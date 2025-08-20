@@ -198,12 +198,18 @@ func (v *Validation) Required(field string, val any) bool {
 // Usage:
 //
 //	v.AddRule("password", "requiredIf", "username", "tom")
-func (v *Validation) RequiredIf(_ string, val any, kvs ...string) bool {
+func (v *Validation) RequiredIf(curKey string, val any, kvs ...string) bool {
 	if len(kvs) < 2 {
 		return false
 	}
 
 	dstField, args := kvs[0], kvs[1:]
+
+	keySec := strings.Split(curKey, ".")
+	if len(keySec) > 1 {
+		keySec = append(keySec[:len(keySec)-1], dstField)
+		dstField = strings.Join(keySec, ".")
+	}
 	if dstVal, has := v.Get(dstField); has {
 		// up: only one check value, direct compare value
 		if len(args) == 1 {
@@ -383,20 +389,18 @@ func (v *Validation) LteField(val any, dstField string) bool {
 
 const fileValidators = "|isFile|isImage|inMimeTypes|"
 
-var (
-	imageMimeTypes = map[string]string{
-		"bmp": "image/bmp",
-		"gif": "image/gif",
-		"ief": "image/ief",
-		"jpg": "image/jpeg",
-		// "jpe":  "image/jpeg",
-		"jpeg": "image/jpeg",
-		"png":  "image/png",
-		"svg":  "image/svg+xml",
-		"ico":  "image/x-icon",
-		"webp": "image/webp",
-	}
-)
+var imageMimeTypes = map[string]string{
+	"bmp": "image/bmp",
+	"gif": "image/gif",
+	"ief": "image/ief",
+	"jpg": "image/jpeg",
+	// "jpe":  "image/jpeg",
+	"jpeg": "image/jpeg",
+	"png":  "image/png",
+	"svg":  "image/svg+xml",
+	"ico":  "image/x-icon",
+	"webp": "image/webp",
+}
 
 func isFileValidator(name string) bool {
 	return strings.Contains(fileValidators, "|"+name+"|")
@@ -1049,7 +1053,6 @@ func IsEqual(val, wantVal any) bool {
 
 	// compare basic type: bool, int(X), uint(X), string, float(X)
 	equal, err := eq(sv, wv)
-
 	// is not a basic type, eg: slice, array, map ...
 	if err != nil {
 		expBt, ok := val.([]byte)
